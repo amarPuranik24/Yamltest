@@ -1,19 +1,10 @@
-resources:
-- repo: self
-queue:
-  name: Default
 steps:
-- task: Checkmarx-Prerelease.cxsast.cx-scan-task.Application security testing@2021
+- task: Checkmarx-Prerelease.cxsast.cx-scan-task.Application security testing@2022
   displayName: 'Application security testing'
   inputs:
-    projectName: testProject0000
-
-    syncMode: false
-
-    CheckmarxService: SastServer94
-
-    fullTeamName: '\CxServer'
-
+    projectName: DPViolations001
+    CheckmarxService: sast9dot5
+    engineConfigId: 1
+    fullTeamName: CxServer
     incScan: false
-
-
+    enablePolicyViolations: true
